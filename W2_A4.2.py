@@ -5,7 +5,7 @@ class MathSeries:
             raise ValueError("Factorial is not defined for negative numbers.")
         if n in (0, 1):
             return 1
-        return n * MathSeries.factorial_recursive(self,n - 1)
+        return n * self.factorial_recursive(n - 1)
 
 
     # @staticmethod
@@ -14,14 +14,14 @@ class MathSeries:
             return 0
         if n == 1:
             return 1
-        return (MathSeries.fibonacci_recursive(self,n - 1) + MathSeries.fibonacci_recursive(self,n - 2))
+        return (self.fibonacci_recursive(n - 1) + self.fibonacci_recursive(n - 2))
 
     def fibonacci_series(self,n):
         if n < 0:
             raise ValueError("Fibonacci is not defined for negative numbers.")
         series = []
         for i in range(n):
-            series.append(MathSeries.fibonacci_recursive(self,i))
+            series.append(self.fibonacci_recursive(i))
         return series
 
 if __name__ == "__main__":
